@@ -1,10 +1,42 @@
-/**
- * Image Cropper Module for Image Compressor Pro
- * This module handles the image cropping functionality
+/*
+ * =====================================================
+ * IMAGE COMPRESSOR - Image Cropping Module
+ * =====================================================
+ * 
+ * Project: Image Compressor
+ * Type: BCA 5th Semester Minor Project
+ * 
+ * Institution: Bhagwant Institute of Technology, Muzaffarnagar
+ * Department: Computer Science Engineering & Application
+ * Semester: BCA 5th Semester (Odd Semester 2025)
+ * 
+ * Team Members:
+ *   - Akash Prajapati (237092010005)
+ *   - Vivek Yadav (237092010058)
+ *   - Ajay Kumar (237092010004)
+ * 
+ * Project Guide: Mr. Sawan Kumar
+ * 
+ * Description:
+ * This file handles the image cropping functionality using the
+ * Cropper.js library. It provides an interactive modal interface
+ * for users to crop images before compression with features like
+ * aspect ratio selection, zoom controls, and real-time preview.
+ * 
+ * Features:
+ * - Interactive crop modal with Cropper.js integration
+ * - Multiple aspect ratio presets (Free, 1:1, 4:3, 16:9, 2:3)
+ * - Zoom in/out controls with slider
+ * - Touch support for mobile devices
+ * - High-quality canvas rendering
+ * 
+ * © 2025 Image Compressor
+ * All Rights Reserved
+ * =====================================================
  */
 
 // Initialize Cropper.js when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Global variables
   let cropper = null;
   let croppedImage = null;
@@ -114,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
       minCanvasWidth: 250,
       minCanvasHeight: 250,
       initialAspectRatio: 1,
-      ready: function() {
+      ready: function () {
         // Set initial zoom level after a short delay to ensure the cropper is fully initialized
         setTimeout(() => {
           try {
@@ -140,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }, 200);
       },
-      zoom: function(event) {
+      zoom: function (event) {
         try {
           // Use the event data to get the exact zoom ratio
           const zoomRatio = event.detail.ratio;
@@ -343,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to update image details after cropping
   function updateImageDetails(blob) {
     const img = new Image();
-    img.onload = function() {
+    img.onload = function () {
       const width = this.width;
       const height = this.height;
 
@@ -472,14 +504,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle mouse down on thumb
-    zoomThumb.addEventListener('mousedown', function(e) {
+    zoomThumb.addEventListener('mousedown', function (e) {
       isDragging = true;
       zoomThumb.classList.add('active');
       e.preventDefault(); // Prevent text selection
     });
 
     // Handle mouse down on slider (for clicking anywhere on the slider)
-    zoomSlider.addEventListener('mousedown', function(e) {
+    zoomSlider.addEventListener('mousedown', function (e) {
       if (e.target === zoomSlider || e.target.classList.contains('crop-zoom-slider')) {
         const position = getPositionFromEvent(e);
         setZoomFromSliderPosition(position);
@@ -487,7 +519,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle mouse move
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function (e) {
       if (!isDragging) return;
 
       const position = getPositionFromEvent(e);
@@ -495,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle mouse up
-    document.addEventListener('mouseup', function() {
+    document.addEventListener('mouseup', function () {
       if (isDragging) {
         zoomThumb.classList.remove('active');
         isDragging = false;
@@ -503,13 +535,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle touch events for mobile
-    zoomThumb.addEventListener('touchstart', function(e) {
+    zoomThumb.addEventListener('touchstart', function (e) {
       isDragging = true;
       zoomThumb.classList.add('active');
       e.preventDefault(); // Prevent scrolling
     });
 
-    zoomSlider.addEventListener('touchstart', function(e) {
+    zoomSlider.addEventListener('touchstart', function (e) {
       if (e.target === zoomSlider || e.target.classList.contains('crop-zoom-slider')) {
         const position = getPositionFromEvent(e, true);
         setZoomFromSliderPosition(position);
@@ -517,7 +549,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    document.addEventListener('touchmove', function(e) {
+    document.addEventListener('touchmove', function (e) {
       if (!isDragging) return;
 
       const position = getPositionFromEvent(e, true);
@@ -525,7 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault(); // Prevent scrolling while dragging
     });
 
-    document.addEventListener('touchend', function() {
+    document.addEventListener('touchend', function () {
       if (isDragging) {
         zoomThumb.classList.remove('active');
         isDragging = false;
@@ -533,7 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle slider click for better UX
-    zoomSlider.addEventListener('click', function(e) {
+    zoomSlider.addEventListener('click', function (e) {
       if (e.target === zoomSlider || e.target.classList.contains('crop-zoom-slider')) {
         const position = getPositionFromEvent(e);
         setZoomFromSliderPosition(position);
@@ -584,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to add ripple effect to buttons
   function addRippleEffect(button) {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       // Create ripple element
       const ripple = document.createElement('span');
       ripple.classList.add('ripple-effect');
@@ -619,7 +651,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const zoomInBtn = document.getElementById('zoom-in');
   const zoomOutBtn = document.getElementById('zoom-out');
 
-  zoomInBtn.addEventListener('click', function() {
+  zoomInBtn.addEventListener('click', function () {
     // Add active class for visual feedback
     this.classList.add('active');
     setTimeout(() => this.classList.remove('active'), 200);
@@ -628,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
     zoomIn();
   });
 
-  zoomOutBtn.addEventListener('click', function() {
+  zoomOutBtn.addEventListener('click', function () {
     // Add active class for visual feedback
     this.classList.add('active');
     setTimeout(() => this.classList.remove('active'), 200);
@@ -646,7 +678,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Aspect ratio buttons
   document.querySelectorAll('.crop-aspect-btn').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       changeAspectRatio(this.dataset.ratio);
     });
   });
@@ -655,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addCropIconToImage = addCropIconToImage;
 
   // Expose the cropped image to the global scope for compression
-  window.getCroppedImage = function() {
+  window.getCroppedImage = function () {
     return croppedImage;
   };
 });

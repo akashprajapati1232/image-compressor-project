@@ -1,3 +1,40 @@
+/*
+ * =====================================================
+ * IMAGE COMPRESSOR - Responsive Stylesheet
+ * =====================================================
+ * 
+ * Project: Image Compressor
+ * Type: BCA 5th Semester Minor Project
+ * 
+ * Institution: Bhagwant Institute of Technology, Muzaffarnagar
+ * Department: Computer Science Engineering & Application
+ * Semester: BCA 5th Semester (Odd Semester 2025)
+ * 
+ * Team Members:
+ *   - Akash Prajapati (237092010005)
+ *   - Vivek Yadav (237092010058)
+ *   - Ajay Kumar (237092010004)
+ * 
+ * Project Guide: Mr. Sawan Kumar
+ * 
+ * Description:
+ * This stylesheet contains all responsive design rules and media
+ * queries for the Image Compressor web application. It ensures
+ * optimal viewing experience across different devices and screen
+ * sizes from mobile phones to large desktop displays.
+ * 
+ * Features:
+ * - Mobile-first responsive design
+ * - Multiple breakpoints for different devices
+ * - Landscape mode optimizations
+ * - Touch-friendly interactions
+ * - Fluid layouts and flexible components
+ * 
+ * © 2025 Image Compressor
+ * All Rights Reserved
+ * =====================================================
+ */
+
 /* Responsive Design */
 
 
@@ -11,10 +48,13 @@
   h1 {
     font-size: 2.4rem;
   }
-  .upload-box{
+
+  .upload-box {
     width: 90%;
   }
-  .upload-box, .settings-card {
+
+  .upload-box,
+  .settings-card {
     max-width: 90%;
   }
 
@@ -46,6 +86,7 @@
   nav {
     padding: 10px 20px;
   }
+
   .hero-section h1 img {
     display: none !important;
   }
@@ -70,8 +111,15 @@
   }
 
   @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .nav-links.active {
@@ -191,7 +239,8 @@
     font-size: 0.9rem;
   }
 
-  .upload-box, .settings-card {
+  .upload-box,
+  .settings-card {
     padding: 15px 12px;
     border-radius: 12px;
   }
@@ -258,7 +307,7 @@
     font-size: 1rem;
   }
 
-  .hero-section h1 span{
+  .hero-section h1 span {
     font-size: 2rem;
   }
 
@@ -276,7 +325,8 @@
     padding: 10px;
   }
 
-  .upload-box, .settings-card {
+  .upload-box,
+  .settings-card {
     padding: 12px 10px;
     border-radius: 10px;
   }
@@ -286,7 +336,8 @@
     font-size: 0.85rem;
   }
 
-  .formats, .max-size {
+  .formats,
+  .max-size {
     font-size: 0.8rem;
   }
 
@@ -321,9 +372,11 @@
     font-size: 0.9rem;
     padding: 8px 12px;
   }
+
   .footer-logo span {
     font-size: 1.2rem;
   }
+
   .copyright {
     font-size: 0.75rem;
   }
@@ -339,7 +392,8 @@
     margin-bottom: 20px;
   }
 
-  .upload-box, .settings-card {
+  .upload-box,
+  .settings-card {
     padding: 15px;
   }
 
@@ -413,7 +467,8 @@
     font-size: 0.9rem;
     margin-left: 5px;
   }
-  .hero-section h1 span{
+
+  .hero-section h1 span {
     font-size: 1.6rem;
   }
 
@@ -425,7 +480,7 @@
     font-size: 0.8rem;
   }
 
-  .upload-box{
+  .upload-box {
     width: 90%;
   }
 
@@ -434,7 +489,8 @@
     font-size: 0.8rem;
   }
 
-  .formats, .max-size {
+  .formats,
+  .max-size {
     font-size: 0.75rem;
   }
 
@@ -450,6 +506,7 @@
     padding: 8px 15px;
     font-size: 0.85rem;
   }
+
   .footer-logo span {
     font-size: 0.9rem;
   }
@@ -457,11 +514,18 @@
 
 /* Touch-friendly adjustments */
 @media (hover: none) {
-  .upload-label, .settings-tab, .action-button, .step, .social-icon {
+
+  .upload-label,
+  .settings-tab,
+  .action-button,
+  .step,
+  .social-icon {
     transition: none;
   }
 
-  .upload-label:active, .settings-tab:active, .action-button:active {
+  .upload-label:active,
+  .settings-tab:active,
+  .action-button:active {
     background-color: var(--accent-light);
   }
 

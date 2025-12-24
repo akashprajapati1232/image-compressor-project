@@ -1,3 +1,41 @@
+/*
+ * =====================================================
+ * IMAGE COMPRESSOR - Image Cropping Stylesheet
+ * =====================================================
+ * 
+ * Project: Image Compressor
+ * Type: BCA 5th Semester Minor Project
+ * 
+ * Institution: Bhagwant Institute of Technology, Muzaffarnagar
+ * Department: Computer Science Engineering & Application
+ * Semester: BCA 5th Semester (Odd Semester 2025)
+ * 
+ * Team Members:
+ *   - Akash Prajapati (237092010005)
+ *   - Vivek Yadav (237092010058)
+ *   - Ajay Kumar (237092010004)
+ * 
+ * Project Guide: Mr. Sawan Kumar
+ * 
+ * Description:
+ * This stylesheet contains all styles for the image cropping
+ * functionality of the Image Compressor application. It includes
+ * modal styling, crop controls, aspect ratio buttons, zoom
+ * controls, and responsive design for the cropping interface.
+ * 
+ * Features:
+ * - Crop modal with backdrop blur effect
+ * - Interactive crop controls
+ * - Aspect ratio selection buttons
+ * - Custom zoom slider with smooth animations
+ * - Action buttons (Cancel/Apply)
+ * - Fully responsive for all devices
+ * 
+ * © 2025 Image Compressor
+ * All Rights Reserved
+ * =====================================================
+ */
+
 /* Crop Feature Styles */
 
 /* Crop Icon */
@@ -47,8 +85,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .crop-modal-content {
@@ -66,8 +109,15 @@
 }
 
 @keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .crop-modal-content::before {
@@ -261,9 +311,17 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(0.95); }
+  0% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
 }
 
 /* Ripple effect */
@@ -324,7 +382,8 @@
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  left: 50%; /* Default position in the middle */
+  left: 50%;
+  /* Default position in the middle */
   transform: translate(-50%, -50%);
   cursor: grab;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);

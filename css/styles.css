@@ -1,6 +1,43 @@
+/*
+ * =====================================================
+ * IMAGE COMPRESSOR - Main Stylesheet
+ * =====================================================
+ * 
+ * Project: Image Compressor
+ * Type: BCA 5th Semester Minor Project
+ * 
+ * Institution: Bhagwant Institute of Technology, Muzaffarnagar
+ * Department: Computer Science Engineering & Application
+ * Semester: BCA 5th Semester (Odd Semester 2025)
+ * 
+ * Team Members:
+ *   - Akash Prajapati (237092010005)
+ *   - Vivek Yadav (237092010058)
+ *   - Ajay Kumar (237092010004)
+ * 
+ * Project Guide: Mr. Sawan Kumar
+ * 
+ * Description:
+ * This stylesheet contains all the main visual styling for the
+ * Image Compressor web application. It includes responsive
+ * design*, modern UI components, animations, and a consistent
+ * monochrome color scheme.
+ * 
+ * Features:
+ * - CSS Custom Properties (CSS Variables) for easy theming
+ * - Responsive design using Flexbox and Grid
+ * - Smooth transitions and animations
+ * - Mobile-first approach with media queries
+ * - Modern glassmorphism effects
+ * 
+ * © 2025 Image Compressor
+ * All Rights Reserved
+ * =====================================================
+ */
+
 :root {
   font-size: 16px;
-/* CSS Variables for colors and styling - Pure Monochrome Theme */
+  /* CSS Variables for colors and styling - Pure Monochrome Theme */
   --primary-color: #0a0a0a;
   --secondary-color: #141414;
   --accent-color: #2a2a2a;
@@ -25,7 +62,7 @@
   --mobile-input-height: 48px;
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -302,8 +339,15 @@ nav .logo:hover img {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
@@ -324,8 +368,13 @@ h1 {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.05); }
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 .heading-text {
@@ -427,9 +476,17 @@ h1 {
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .upload-box:hover {
@@ -496,7 +553,8 @@ h1 {
   z-index: 2;
 }
 
-.formats, .max-size {
+.formats,
+.max-size {
   font-size: 0.9rem;
   color: var(--accent-light);
   display: flex;
@@ -560,7 +618,8 @@ input[type="file"] {
   font-size: 0.9rem;
   color: var(--text-color);
   text-align: left;
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
   animation: slideUp 0.5s ease-out;
   background-color: var(--secondary-color);
   border-radius: 8px;
@@ -570,8 +629,15 @@ input[type="file"] {
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .details-header {
@@ -672,9 +738,11 @@ input[type="file"] {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
@@ -692,7 +760,8 @@ input[type="file"] {
   margin-right: auto;
   box-sizing: border-box;
   margin-bottom: 60px;
-  display: none; /* Hidden by default, will be shown after compression */
+  display: none;
+  /* Hidden by default, will be shown after compression */
 }
 
 .preview-container {
@@ -742,9 +811,11 @@ input[type="file"] {
   0% {
     background-position: 0% 0%;
   }
+
   50% {
     background-position: 100% 100%;
   }
+
   100% {
     background-position: 0% 0%;
   }
@@ -914,12 +985,10 @@ input[type="file"] {
   width: 300%;
   height: 300%;
   background:
-    repeating-conic-gradient(
-      var(--card-highlight) 0deg,
+    repeating-conic-gradient(var(--card-highlight) 0deg,
       transparent 5deg,
       transparent 10deg,
-      var(--card-highlight) 15deg
-    );
+      var(--card-highlight) 15deg);
   opacity: 0.03;
   animation: rotateConic 60s linear infinite;
   pointer-events: none;
@@ -930,6 +999,7 @@ input[type="file"] {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -1040,11 +1110,11 @@ input[type="file"] {
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--highlight-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(26px);
 }
 
@@ -1073,7 +1143,8 @@ input:checked + .slider:before {
   gap: 10px;
   backdrop-filter: blur(5px);
   border: 1px solid var(--border-color);
-  z-index: 10; /* Ensure it appears in front of the image */
+  z-index: 10;
+  /* Ensure it appears in front of the image */
 }
 
 .preview-stats {
@@ -1144,7 +1215,8 @@ input:checked + .slider:before {
   font-size: 1.5rem;
 }
 
-#compressed-size-display, #original-size-display {
+#compressed-size-display,
+#original-size-display {
   font-size: 1rem;
   color: var(--text-color);
   display: flex;
@@ -1152,7 +1224,8 @@ input:checked + .slider:before {
   gap: 8px;
 }
 
-#compressed-size-display i, #original-size-display i {
+#compressed-size-display i,
+#original-size-display i {
   color: var(--accent-light);
 }
 
@@ -1366,7 +1439,8 @@ input:checked + .slider:before {
   height: 100%;
   background-color: var(--highlight-color);
   border-radius: 5px;
-  width: 70%; /* Default value */
+  width: 70%;
+  /* Default value */
   transition: width 0.2s ease;
   z-index: 1;
 }
@@ -1378,7 +1452,8 @@ input:checked + .slider:before {
   background-color: white;
   border-radius: 50%;
   top: 50%;
-  left: 70%; /* Default value - will be updated by JS */
+  left: 70%;
+  /* Default value - will be updated by JS */
   transform: translate(-50%, -50%);
   z-index: 3;
   pointer-events: none;
@@ -1516,10 +1591,12 @@ input[type="range"]::-ms-track {
     transform: scale(1);
     opacity: 0.7;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
     opacity: 0.7;
@@ -1621,7 +1698,8 @@ footer {
 .footer-logo img {
   height: 60px;
 }
-a{
+
+a {
   text-decoration: none;
   gap: 5px;
 }
@@ -1670,4 +1748,3 @@ a{
 .copyright a:hover {
   text-decoration: underline;
 }
-
