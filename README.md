@@ -1,9 +1,4 @@
 # Image Compressor
-
-## Synopsis on Image Compressor
-### For the fulfillment of the Minor Project
-### Bachelor of Computer Applications (BCA)
-
 ---
 
 ## Project Information
